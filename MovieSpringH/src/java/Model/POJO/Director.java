@@ -49,7 +49,13 @@ public class Director  implements java.io.Serializable {
         this.peliculas = peliculas;
     }
 
+    public String [] toStringArray() {
+        String [] data = new String[2];
+        data[0]=String.valueOf(this.dirId);
+        data[1]=this.dirNombre;
 
+        return data;
+    }
 
 
 }

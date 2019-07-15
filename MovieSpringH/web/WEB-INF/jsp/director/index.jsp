@@ -28,7 +28,7 @@
                     </div>
             </div>
         </div>
-  <div class="page-single">
+       <div class="page-single">
 	<div class="container">
 		<div class="row ipad-width2">
 			<div class="col-md-9 col-sm-12 col-xs-12">
@@ -65,7 +65,7 @@
 			<div class="col-md-3 col-xs-12 col-sm-12">
 				<div class="sidebar">
 						<div class="searh-form">
-						<h4 class="sb-title">Search celebrity</h4>
+						<h4 class="sb-title">Search Director</h4>
 						<form class="form-style-1 celebrity-form" action="#">
 							<div class="row">
 								<div class="col-md-12 form-it">
@@ -79,12 +79,22 @@
 							</div>
 						</form>
 					</div>
+                                                <div class="searh-form">
+                                                        <h4 class="sb-title">Download Pdf</h4>
+                                                            <div class="col-md-12 ">
+                                                                <a href="/MovieSpringH/file/download.htm?tag=director">
+                                                                    <input class="redbtn" type="button" value="download pdf">
+                                                                </a>
+
+                                                            </div>
+                                                </div>
 					
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+       
             <%@include file="../templatefoot.jsp"%>
   </body>
         <script src="<c:url value="/resources/js/jquery.js"/>"></script>

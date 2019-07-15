@@ -90,7 +90,17 @@ public class Alquiler  implements java.io.Serializable {
     public void setAlqFechaEntrega(Date alqFechaEntrega) {
         this.alqFechaEntrega = alqFechaEntrega;
     }
-
+    
+    public String [] toStringArray() {
+        String [] data = new String[6];
+        data[0]=String.valueOf(this.alqId);
+        data[1]=this.getPelicula().getPelNombre();
+        data[2]=this.alqFechaDesde.toString();
+        data[3]=this.alqFechaHasta.toString();
+        data[4]=this.alqFechaEntrega.toString();
+        data[5]=String.valueOf(this.alqValor);
+        return data;
+    }
 
 
 

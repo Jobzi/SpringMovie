@@ -50,7 +50,13 @@ public class Genero  implements java.io.Serializable {
     }
 
 
+        public String [] toStringArray() {
+        String [] data = new String[2];
+        data[0]=String.valueOf(this.genId);
+        data[1]=this.genNombre;
 
+        return data;
+    }
 
 }
 

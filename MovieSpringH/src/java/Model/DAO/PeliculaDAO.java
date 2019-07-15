@@ -133,7 +133,7 @@ public class PeliculaDAO {
         String hql="from Pelicula pelicula where pelicula.pelCosto="+valor+"";
         Query query =session.createQuery(hql);
         list = query.list();
-         System.out.println("********************************************");
+            System.out.println("********************************************");
             for (int i = 0; i < list.size(); i++) {
                 System.out.println(" "+list.get(i).getPelNombre()
                                   +" Genero: " +list.get(i).getGenero().getGenId()  +" "+ list.get(i).getGenero().getGenNombre() 
@@ -148,28 +148,15 @@ public class PeliculaDAO {
         }
         return list;   
     }
-    public String obtenerPelicula(int id)
-    {
-        Pelicula obj=null;
-        try{
-        Session session =HibernateUtil.getSessionFactory().openSession();
-        Transaction tx=session.beginTransaction();
-               obj =  (Pelicula) session.get(Pelicula.class, id);
-               obj.getDirector().getDirNombre();
-               obj.getDirector().getDirId();
-               obj.getDirector().getPeliculas();
-               obj.getFormato().getForNombre();
-               obj.getFormato().getForId();
-               obj.getFormato().getPeliculas();
-               obj.getGenero().getGenNombre();
-               obj.getGenero().getGenId();
-               obj.getGenero().getPeliculas();
-        tx.commit();
-        session.close();
-        }catch(Exception E){
-            E.printStackTrace();
-        }
-        return "La pelicula solicitada es "+obj.getPelNombre();
+  public static String [] tableNameArray() {
+        String [] data = new String[7];
+        data[0]="ID";
+        data[1]="NOMBRE";
+        data[2]="GENERO";
+        data[3]="DIRECTOR";
+        data[4]="FECHA ESTRENO";
+        data[5]="FORMATO";
+        data[6]="COSTO";
+        return data;
     }
-  
 }

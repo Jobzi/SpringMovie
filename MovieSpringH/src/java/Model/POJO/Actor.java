@@ -58,7 +58,13 @@ public class Actor  implements java.io.Serializable {
         this.actorPeliculas = actorPeliculas;
     }
 
-
+      public String [] toStringArray() {
+        String [] data = new String[3];
+        data[0]=String.valueOf(this.actId);
+        data[1]=this.actNombre;
+        data[2]=this.getSexo().getSexNombre();
+        return data;
+    }
 
 
 }

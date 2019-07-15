@@ -84,6 +84,15 @@
 							</div>
 						</form>
 					</div>
+                                                <div class="searh-form">
+                                                        <h4 class="sb-title">Download Pdf</h4>
+                                                            <div class="col-md-12 ">
+                                                                <a href="/MovieSpringH/file/download.htm?tag=actor">
+                                                                    <input class="redbtn" type="button" value="download pdf">
+                                                                </a>
+
+                                                            </div>
+                                                </div>
 					
 				</div>
 			</div>

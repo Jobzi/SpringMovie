@@ -96,5 +96,11 @@ public class SexoDAO {
         }
         return obj;
     }
-    
+    public  static String [] tableNameArray() {
+        String [] data = new String[2];
+        data[0]="ID";
+        data[1]="NOMBRE";
+
+        return data;
+    }
 }

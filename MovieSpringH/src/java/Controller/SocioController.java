@@ -102,5 +102,5 @@ public class SocioController {
         SocioDAO.Delete(id);
         return new ModelAndView("redirect:/socio/index.htm");
     }
-
+   
 }
