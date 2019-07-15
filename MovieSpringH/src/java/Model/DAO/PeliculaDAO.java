@@ -159,4 +159,27 @@ public class PeliculaDAO {
         data[6]="COSTO";
         return data;
     }
+  public String obtenerPelicula(int id)
+    {
+        Pelicula obj=null;
+        try{
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        Transaction tx=session.beginTransaction();
+               obj =  (Pelicula) session.get(Pelicula.class, id);
+               obj.getDirector().getDirNombre();
+               obj.getDirector().getDirId();
+               obj.getDirector().getPeliculas();
+               obj.getFormato().getForNombre();
+               obj.getFormato().getForId();
+               obj.getFormato().getPeliculas();
+               obj.getGenero().getGenNombre();
+               obj.getGenero().getGenId();
+               obj.getGenero().getPeliculas();
+        tx.commit();
+        session.close();
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        return "La pelicula solicitada es "+obj.getPelNombre();
+    }
 }

@@ -8,6 +8,7 @@ package Model.DAO;
 import java.util.List;
 
 import Model.POJO.Alquiler;
+import Model.POJO.Pelicula;
 import Model.UTIL.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -101,5 +102,24 @@ public class AlquilerDAO {
         data[4]="FECHA ENTREGA";
         data[5]="PRECIO";
         return data;
+    }
+        public String getAlquileres(String valor) {
+        String aumentador="";
+        List<Pelicula> list = null;
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            String hql = "select pelicula from Pelicula pelicula, Alquiler alquiler, Socio socio where alquiler.socio.socId=socio.socId and alquiler.pelicula.pelId=pelicula.pelId and socio.socCedula='" + valor + "'";
+            Query query = session.createQuery(hql);
+            list = query.list();
+            session.close();
+        } catch (Exception E) {
+            E.printStackTrace();
+        }
+        for (Pelicula cadena : list) {
+            aumentador = aumentador.concat(cadena.getPelNombre())+"\n";
+        }
+        System.out.println(aumentador);
+
+        return "Sus peliculas alquiladas son:\n"+aumentador;
     }
 }

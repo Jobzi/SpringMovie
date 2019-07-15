@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     private class SegundoPlano extends AsyncTask<String,String,String>{
         static final String NAMESPACE="http://WebService/";
         static final String METHODNAME="BuscarAlquiler";
-        static final String URL="http://10.52.39.221:8080/MovieSpringH/AlquilerWS?WSDL";
+        static final String URL="http://10.52.50.152:8080/MovieSpringH/AlquilerWS?WSDL";
         static final String SOAP_ACTION=NAMESPACE+METHODNAME;
 
         @Override
