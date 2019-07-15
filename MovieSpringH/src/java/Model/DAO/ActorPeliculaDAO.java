@@ -95,5 +95,12 @@ public class ActorPeliculaDAO {
         }
         return obj;
     }
-    
+     public static String [] tableNameArray() {
+        String [] data = new String[4];
+        data[0]="ID";
+        data[1]="ACTOR";
+        data[2]="PELICULA";
+        data[3]="PAPEL";
+        return data;
+    }
 }

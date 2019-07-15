@@ -88,6 +88,19 @@ public class Socio  implements java.io.Serializable {
     public void setAlquilers(Set alquilers) {
         this.alquilers = alquilers;
     }
+     
+
+    
+    public String [] toStringArray() {
+        String [] data = new String[6];
+        data[0]=String.valueOf(this.socId);
+        data[1]=this.socCedula;
+        data[2]=this.socNombre;
+        data[3]=this.socDireccion;
+        data[4]=this.socTelefono;
+        data[5]=this.socCorreo;
+        return data;
+    }
 
 
 

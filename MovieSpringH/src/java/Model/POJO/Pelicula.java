@@ -107,7 +107,17 @@ public class Pelicula  implements java.io.Serializable {
         this.alquilers = alquilers;
     }
 
-
+        public String [] toStringArray() {
+        String [] data = new String[7];
+        data[0]=String.valueOf(this.pelId);
+        data[1]=this.pelNombre;
+        data[2]=this.getGenero().getGenNombre();
+        data[3]=this.getDirector().getDirNombre();
+        data[4]=this.pelFechaEstreno.toString();
+        data[5]=this.getFormato().getForNombre();
+        data[6]=String.valueOf(this.pelCosto);
+        return data;
+    }
 
 
 }

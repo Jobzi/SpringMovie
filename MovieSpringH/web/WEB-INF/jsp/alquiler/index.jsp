@@ -53,10 +53,38 @@
                                                 
 					</div>
 				</div>
-                                     ]
+                                     
                                  </c:forEach>
 			</div>
-		
+                        <div class="col-md-3 col-xs-12 col-sm-12">
+				<div class="sidebar">
+						<div class="searh-form">
+						<h4 class="sb-title">Search Alquiler</h4>
+						<form class="form-style-1 celebrity-form" action="#">
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label>Celebrity name</label>
+									<input type="text" placeholder="Enter keywords">
+								</div>
+								
+								<div class="col-md-12 ">
+									<input class="submit" type="submit" value="submit">
+								</div>
+							</div>
+						</form>
+					</div>
+                                                <div class="searh-form">
+                                                        <h4 class="sb-title">Download Pdf</h4>
+                                                            <div class="col-md-12 ">
+                                                                <a href="/MovieSpringH/file/download.htm?tag=alquiler">
+                                                                    <input class="redbtn" type="button" value="download pdf">
+                                                                </a>
+
+                                                            </div>
+                                                </div>
+					
+				</div>
+			</div>
                      
                       </div>
                 </div>

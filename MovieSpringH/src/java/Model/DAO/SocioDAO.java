@@ -82,5 +82,14 @@ public class SocioDAO {
         }
         return obj;
     }
-    
+     public static String [] tableNameArray() {
+        String [] data = new String[6];
+        data[0]="ID";
+        data[1]="CEDULA";
+        data[2]="NOMBRE";
+        data[3]="DIRECCION";
+        data[4]="TELEFONO";
+        data[5]="CORREO";
+        return data;
+    }
 }

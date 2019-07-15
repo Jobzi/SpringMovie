@@ -57,7 +57,14 @@ public class ActorPelicula  implements java.io.Serializable {
     }
 
 
-
+        public String [] toStringArray() {
+        String [] data = new String[4];
+        data[0]=String.valueOf(this.aplId);
+        data[1]=this.getActor().getActNombre();
+        data[2]=this.getPelicula().getPelNombre();
+        data[3]=this.aplPapel;
+        return data;
+    }
 
 }
 

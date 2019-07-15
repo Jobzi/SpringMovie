@@ -53,14 +53,44 @@
                                                 
 					</div>
 				</div>
-                                     ]
+                                     
                                  </c:forEach>
 			</div>
-		
+                        <div class="col-md-3 col-xs-12 col-sm-12">
+                            <div class="sidebar">
+                                <div class="searh-form">
+                                        <h4 class="sb-title">Search Pelicula</h4>
+                                                <form class="form-style-1 celebrity-form" action="reportevalor.htm" method="POST">
+                                                    <div class="row">
+                                                        <div class="col-md-12 form-it">
+                                                            <label>Valor</label>
+                                                            <input type="number" step="any" name="valor" placeholder="Enter Value">
+                                                        </div>
+
+                                                        <div class="col-md-12 ">
+                                                            <input class="submit" type="submit" value="sent">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                </div>
+                                
+                                <div class="searh-form">
+                                        <h4 class="sb-title">Download Pdf</h4>
+                                            <div class="col-md-12 ">
+                                                <a href="/MovieSpringH/file/download.htm?tag=pelicula">
+                                                    <input class="redbtn" type="button" value="download pdf">
+                                                </a>
+                                                  
+                                            </div>
+                                </div>
+                            </div>
+                        </div>  
                      
                       </div>
                 </div>
+                
         </div>
+       
                 
          <%@include file="../templatefoot.jsp"%>
     </body>

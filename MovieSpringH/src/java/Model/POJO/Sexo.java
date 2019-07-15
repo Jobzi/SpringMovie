@@ -48,7 +48,13 @@ public class Sexo  implements java.io.Serializable {
     public void setActors(Set actors) {
         this.actors = actors;
     }
+    public String [] toStringArray() {
+        String [] data = new String[2];
+        data[0]=String.valueOf(this.sexId);
+        data[1]=this.sexNombre;
 
+        return data;
+    }
 
 
 

@@ -7,17 +7,25 @@ package Controller;
 
 
 
+import Manager.FileManager;
 import Model.DAO.PeliculaDAO;
 import Model.POJO.Pelicula;
 import Model.POJO.Director;
 import Model.POJO.Formato;
 import Model.POJO.Genero;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -148,7 +156,9 @@ public class PeliculaController {
     public String reportevalor(Model m,@RequestParam("valor") double valor){
            List<Pelicula> list = PeliculaDAO.getReporteValor(valor);
            m.addAttribute("pelicula",list);
-        return "/pelicula/reportevalor"; 
+        return "/pelicula/index"; 
     }
     
-}
+    
+    
+ }

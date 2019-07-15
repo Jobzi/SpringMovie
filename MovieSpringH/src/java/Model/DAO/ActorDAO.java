@@ -90,5 +90,11 @@ public class ActorDAO {
         }
         return actor;
     }
-    
+     public static String [] tableNameArray() {
+        String [] data = new String[3];
+        data[0]="ID";
+        data[1]="NOMBRE";
+        data[2]="SEXO";
+        return data;
+    }
 }
