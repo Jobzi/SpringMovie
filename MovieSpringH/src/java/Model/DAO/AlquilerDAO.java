@@ -122,4 +122,23 @@ public class AlquilerDAO {
 
         return "Sus peliculas alquiladas son:\n"+aumentador;
     }
+        public static List<Pelicula> getReporteAlquiler(String valor){
+      List<Pelicula> list=null;
+        try{
+            
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        String hql="select pelicula from Pelicula pelicula, Alquiler alquiler, Socio socio where alquiler.socio.socId=socio.socId and alquiler.pelicula.pelId=pelicula.pelId and socio.socNombre='"+valor+"'";
+        Query query =session.createQuery(hql);
+        list = query.list();
+        System.out.println("********************************************");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println("Alquiler "+list.get(i).getPelNombre());
+            }
+             System.out.println("********************************************");
+        session.close();
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        return list;   
+    }
 }

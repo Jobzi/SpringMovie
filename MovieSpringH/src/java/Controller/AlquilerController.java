@@ -7,7 +7,11 @@ package Controller;
 
 
 import Model.DAO.AlquilerDAO;
+import Model.DAO.PeliculaDAO;
+
 import Model.POJO.Alquiler;
+import Model.POJO.Pelicula;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,6 +25,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -139,5 +144,19 @@ public class AlquilerController {
         AlquilerDAO.Delete(id);
         return new ModelAndView("redirect:/alquiler/index.htm");
     }
+    @RequestMapping(value = "/alquiler/reportealquiler.htm",method=RequestMethod.GET)
+    public String reportesocio(Model m){
+        
+           List<Pelicula> list = PeliculaDAO.getlist();
+           m.addAttribute("pelicula",list);
+        return "/alquiler/reportealquiler"; 
+    }
     
+    @RequestMapping(value = "/alquiler/reportealquiler.htm",method=RequestMethod.POST)
+    public String reportesocio(Model m,@RequestParam("valor") String valor){
+        List<Pelicula> list = AlquilerDAO.getReporteAlquiler(valor);
+           //m.addAttribute("pelicula",list);
+           m.addAttribute("pelicula",list);
+        return "/alquiler/reportealquiler"; 
+    }
 }
