@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -122,4 +123,19 @@ public class DirectorController {
         return new ModelAndView("redirect:/director/index.htm");
     }
     
+@RequestMapping(value = "/director/reportedirector.htm",method=RequestMethod.GET)
+    public String reportedirector(Model m){
+        
+           List<Director> list = DirectorDAO.getlist();
+           m.addAttribute("director",list);
+        return "/director/reportedirector"; 
+    }
+    
+    @RequestMapping(value = "/director/reportedirector.htm",method=RequestMethod.POST)
+    public String reportedirector(Model m,@RequestParam("valor") String valor){
+           List<Director> list = DirectorDAO.getReporteDirector(valor);
+           m.addAttribute("director",list);
+        return "/director/index"; 
+        
+    }
 }

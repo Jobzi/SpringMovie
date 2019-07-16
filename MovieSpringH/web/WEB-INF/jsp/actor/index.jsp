@@ -70,12 +70,12 @@
 			<div class="col-md-3 col-xs-12 col-sm-12">
 				<div class="sidebar">
 						<div class="searh-form">
-						<h4 class="sb-title">Search Actor</h4>
-						<form class="form-style-1 celebrity-form" action="#">
+						<h4 class="sb-title">Buscar Actor</h4>
+						<form class="form-style-1 celebrity-form" action="reporteactor.htm" method="POST">
 							<div class="row">
 								<div class="col-md-12 form-it">
-									<label>Actor name</label>
-									<input type="text" placeholder="Enter keywords">
+									<label>Ingrese el nombre del actor</label>
+									<input type="text" name="valor" placeholder="Enter keywords">
 								</div>
 								
 								<div class="col-md-12 ">

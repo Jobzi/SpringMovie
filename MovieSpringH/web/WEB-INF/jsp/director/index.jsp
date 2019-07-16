@@ -66,11 +66,11 @@
 				<div class="sidebar">
 						<div class="searh-form">
 						<h4 class="sb-title">Buscar Director</h4>
-						<form class="form-style-1 celebrity-form" action="#">
+						<form class="form-style-1 celebrity-form" action="reportedirector.htm" method="POST">
 							<div class="row">
 								<div class="col-md-12 form-it">
 									<label>Nombre del director</label>
-									<input type="text" placeholder="Enter keywords">
+									<input type="text" name="valor" placeholder="Enter keywords">
 								</div>
 								
 								<div class="col-md-12 ">
