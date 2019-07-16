@@ -35,7 +35,7 @@
 		
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
-					<p>Found <span>${pelicula.size()}</span> in total</p>
+					<p>Peliculas <span>${pelicula.size()}</span> encontradas</p>
 					
                                 </div>
 				
@@ -59,26 +59,26 @@
                         <div class="col-md-3 col-xs-12 col-sm-12">
                             <div class="sidebar">
                                 <div class="searh-form">
-                                        <h4 class="sb-title">Search Pelicula</h4>
+                                        <h4 class="sb-title"> Pelicula</h4>
                                                 <form class="form-style-1 celebrity-form" action="reportevalor.htm" method="POST">
                                                     <div class="row">
                                                         <div class="col-md-12 form-it">
-                                                            <label>Valor</label>
+                                                            <label>Ingrese el valor de la pelicula</label>
                                                             <input type="number" step="any" name="valor" placeholder="Enter Value">
                                                         </div>
 
                                                         <div class="col-md-12 ">
-                                                            <input class="submit" type="submit" value="sent">
+                                                            <input class="submit" type="submit" value="enviar">
                                                         </div>
                                                     </div>
                                                 </form>
                                 </div>
                                 
                                 <div class="searh-form">
-                                        <h4 class="sb-title">Download Pdf</h4>
+                                        <h4 class="sb-title">Descargar Pdf</h4>
                                             <div class="col-md-12 ">
                                                 <a href="/MovieSpringH/file/download.htm?tag=pelicula">
-                                                    <input class="redbtn" type="button" value="download pdf">
+                                                    <input class="redbtn" type="button" value="descargar pdf">
                                                 </a>
                                                   
                                             </div>

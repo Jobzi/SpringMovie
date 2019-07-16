@@ -144,7 +144,7 @@ public class AlquilerController {
         AlquilerDAO.Delete(id);
         return new ModelAndView("redirect:/alquiler/index.htm");
     }
-    @RequestMapping(value = "/alquiler/reportealquiler.htm",method=RequestMethod.GET)
+  @RequestMapping(value = "/alquiler/reportealquiler.htm",method=RequestMethod.GET)
     public String reportesocio(Model m){
         
            List<Pelicula> list = PeliculaDAO.getlist();
@@ -154,8 +154,7 @@ public class AlquilerController {
     
     @RequestMapping(value = "/alquiler/reportealquiler.htm",method=RequestMethod.POST)
     public String reportesocio(Model m,@RequestParam("valor") String valor){
-        List<Pelicula> list = AlquilerDAO.getReporteAlquiler(valor);
-           //m.addAttribute("pelicula",list);
+           List<Pelicula> list = AlquilerDAO.getReporteAlquiler(valor);
            m.addAttribute("pelicula",list);
         return "/alquiler/reportealquiler"; 
     }

@@ -33,7 +33,7 @@
 		<div class="row ipad-width2">
 			<div class="col-md-9 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
-					<p class="pad-change">Found <span>${actor.size()} celebrities</span> in total</p>
+					<p class="pad-change">Actores <span>${actor.size()}</span> encontrados</p>
 					
 				</div>
                                         
@@ -79,16 +79,16 @@
 								</div>
 								
 								<div class="col-md-12 ">
-									<input class="submit" type="submit" value="submit">
+									<input class="submit" type="submit" value="Enviar">
 								</div>
 							</div>
 						</form>
 					</div>
                                                 <div class="searh-form">
-                                                        <h4 class="sb-title">Download Pdf</h4>
+                                                        <h4 class="sb-title">Descargar Pdf</h4>
                                                             <div class="col-md-12 ">
                                                                 <a href="/MovieSpringH/file/download.htm?tag=actor">
-                                                                    <input class="redbtn" type="button" value="download pdf">
+                                                                    <input class="redbtn" type="button" value="descargar pdf">
                                                                 </a>
 
                                                             </div>

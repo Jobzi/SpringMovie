@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -102,5 +103,19 @@ public class SocioController {
         SocioDAO.Delete(id);
         return new ModelAndView("redirect:/socio/index.htm");
     }
-   
+ 
+@RequestMapping(value = "/socio/reportesocio.htm",method=RequestMethod.GET)
+    public String reportesocio(Model m){
+        
+           List<Socio> list = SocioDAO.getlist();
+           m.addAttribute("socio",list);
+        return "/socio/reportesocio"; 
+    }
+    
+    @RequestMapping(value = "/socio/reportesocio.htm",method=RequestMethod.POST)
+    public String reportesocio(Model m,@RequestParam("valor") String valor){
+           List<Socio> list = SocioDAO.getReporteNombre(valor);
+           m.addAttribute("socio",list);
+        return "/socio/index"; 
+    }  
 }
