@@ -47,33 +47,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void convertir(){
-        String SOAP_ACTION = "";
-        String METHOD_NAME = "BuscarAlquiler";
-        String NAMESPACE = "http://WebService/";
-        String URL = "http://localhost:8080/MovieSpringH/AlquilerWS";
-
-        try {
-            SoapObject Request = new SoapObject(NAMESPACE,METHOD_NAME);
-            Request.addProperty("cedula",param1);
-            SoapSerializationEnvelope soapEnvelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-            soapEnvelope.dotNet = true;
-            soapEnvelope.setOutputSoapObject(Request);
-
-            HttpTransportSE transport = new HttpTransportSE(URL);
-            transport.call(SOAP_ACTION,soapEnvelope);
-            resultString = (SoapPrimitive) soapEnvelope.getResponse();
-            mensaje = "OK";
-
-        } catch (Exception ex){
-            mensaje = "Error:"+ex.getMessage();
-        }
-    }
 
     private class SegundoPlano extends AsyncTask<String,String,String>{
         static final String NAMESPACE="http://WebService/";
         static final String METHODNAME="BuscarAlquiler";
-        static final String URL="http://10.52.50.152:8080/MovieSpringH/AlquilerWS?WSDL";
+        static final String URL="http://192.168.1.11:8080/MovieSpringH/AlquilerWS?WSDL";
         static final String SOAP_ACTION=NAMESPACE+METHODNAME;
 
         @Override

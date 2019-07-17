@@ -19,133 +19,111 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <% Vector Peliculas = DropDownDAO.getViewDataPeliculas();
-        Vector Socios = DropDownDAO.getViewDataSocio();%>
-    <body>
+            Vector Socios = DropDownDAO.getViewDataSocio();%>
+      <body>
         <%@include file="../templateheader.jsp"%>
         <div class="hero common-hero">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="hero-ct">
-                            <h1>Alquiler</h1>
-                            <ul class="breadcumb">
-                                <li class="active"><a href="/MovieSpringH/alquiler/index.htm">Alquiler</a></li>
-                                <li> <span class="ion-ios-arrow-right"></span> Agregar</li>
-                            </ul>
-
-                        </div>
+                    <div class="row">
+                            <div class="col-md-12">
+                                    <div class="hero-ct">
+                                            <h1>Alquiler</h1>
+                                            <ul class="breadcumb">
+                                                    <li class="active"><a href="/MovieSpringH/alquiler/index.htm">Alquiler</a></li>
+                                                    <li> <span class="ion-ios-arrow-right"></span> Agregar</li>
+                                            </ul>
+                                            
+                                    </div>
+                            </div>
                     </div>
-                </div>
             </div>
         </div>
         <div class="page-single">
-            <div class="container">
-                <div class="row ipad-width">
-
-                    <div class="col-md-9 col-sm-12 col-xs-12">
-                        <div class="form-style-1 user-pro" action="#">
-                            <form:form method="post" commandName="alquiler">          
-                                <p style="display:none;" name="ids">
-                                    <form:input path="alqId" cssClass="form-control"  />
-                                    <form:select path="socio.socId" id="selectSOid" items="<%= Socios.get(0)%>" itemsLabel="Generos"  cssClass="form-control" />
-                                    <form:select path="pelicula.pelId" id="selectPid" items="<%= Peliculas.get(0)%>" itemsLabel="Director"  cssClass="form-control" />
-                                    <form:select path="pelicula.pelCosto" id="selectPc" items="<%= Peliculas.get(2)%>" itemsLabel="Director"  cssClass="form-control" />
-
-                                </p>
-                                <form:errors path="*" element="div" cssClass="alert alert-danger" />	
-                                <h4>01. Alquiler detalles</h4>
-                                <div class="row">
-                                    <div class="col-md-6 form-it">
-                                        <form:label path="socio.socNombre">Socio:</form:label>
-                                        <form:select path="socio.socNombre" id="selectSON" items="<%= Socios.get(1)%>" itemsLabel="Director"  cssClass="form-control" />
+	<div class="container">
+		<div class="row ipad-width">
+			
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<div class="form-style-1 user-pro" action="#">
+                                    <form:form method="post" commandName="alquiler">          
+                                        <p style="display:none;" name="ids">
+                                            <form:input path="alqId" cssClass="form-control"  />
+                                            <form:select path="socio.socId" id="selectSOid" items="<%= Socios.get(0)%>" itemsLabel="Generos"  cssClass="form-control" />
+                                            <form:select path="pelicula.pelId" id="selectPid" items="<%= Peliculas.get(0)%>" itemsLabel="Director"  cssClass="form-control" />
+                                            <form:select path="pelicula.pelCosto" id="selectPc" items="<%= Peliculas.get(2)%>" itemsLabel="Director"  cssClass="form-control" />
+                                            
+                                        </p>
+                                        <form:errors path="*" element="div" cssClass="alert alert-danger" />	
+						<h4>01. Alquiler detalles</h4>
+						<div class="row">
+							<div class="col-md-6 form-it">
+								     <form:label path="socio.socNombre">Socio:</form:label>
+                                                                     <form:select path="socio.socNombre" id="selectSON" items="<%= Socios.get(1)%>" itemsLabel="Director"  cssClass="form-control" />
+							</div>
+							<div class="col-md-6 form-it">
+								    <form:label path="pelicula.pelNombre">Pelicula</form:label>
+                                                                     <form:select path="pelicula.pelNombre" id="selectPN" items="<%= Peliculas.get(1)%>" itemsLabel="Generos"  cssClass="form-control" />
+							</div>
+							
+						</div>
+						
+						
+                                                <div class="row">
+                                                         <div class="col-md-6 form-it">
+								 <form:label path="alqFechaDesde" >Fecha Alquiler: </form:label>
+                                                                 <form:input   path="alqFechaDesde" id="datepickerD" cssClass="form-control" />
+							</div>
+							<div class="col-md-6 form-it">
+								<form:label path="alqFechaHasta" >Fecha Vencimiento: </form:label>
+                                                                <form:input   path="alqFechaHasta" id="datepickerH" cssClass="form-control"   />    
+							</div>
+							
+						</div>
+                                                <div class="row">
+							<div class="col-md-6 form-it" style="display:none;">
+								 <form:label path="alqFechaEntrega" >Fecha Entrega: </form:label>
+                                                                  <form:input path="alqFechaEntrega" id="datepickerE" cssClass="form-control" />
+							</div>
+							<div class="col-md-6 form-it">
+								<form:label path="alqValor">Valor Alquiler</form:label>
+                                                                <form:input id="alqval" path="alqValor"  cssClass="form-control" />
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-2">
+								<input class="submit" type="submit" value="save">
+							</div>
+						</div>	
+                                         </form:form>
+					
+                                            </div>
                                     </div>
-
-
-                                </div>
-
-
-                                <div class="row">
-                                    <div class="col-md-6 form-it">
-                                        <form:label path="pelicula.pelNombre">Pelicula</form:label>
-                                        <form:select path="pelicula.pelNombre" id="selectPN" items="<%= Peliculas.get(1)%>" itemsLabel="Generos"  cssClass="form-control" />
-                                    </div>
-                                    <div class="col-md-6 form-it">
-                                        <form:label path="alqFechaDesde" >Fecha Alquiler: </form:label>
-                                        <form:input   path="alqFechaDesde" type="date" cssClass="form-control" />
-                                    </div>
-                                    <div class="col-md-6 form-it">
-                                        <form:label path="alqFechaHasta" >Fecha Vencimiento: </form:label>
-                                        <form:input   path="alqFechaHasta" type="date" cssClass="form-control"   />    
-                                    </div>
-                                    <div class="col-md-6 form-it" style="display:none;">
-                                        <form:label path="alqFechaEntrega" >Fecha Entrega: </form:label>
-                                        <form:input path="alqFechaEntrega" type="date" cssClass="form-control" />
-                                    </div>
-                                    <div class="col-md-6 form-it">
-                                        <form:label path="alqValor">Valor Alquiler</form:label>
-                                        <form:input id="alqval" path="alqValor"  cssClass="form-control" />
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div>
-                                        <table class="table" id="tablita">
-
-                                            <tr>
-                                                <th>IDS</th>
-                                                <th>Socio</th>
-                                                <th>Pelicula</th>
-                                                <th>Fecha Alquiler</th>
-                                                <th>Fecha Vencimiento</th>
-                                                <th >Fecha Entrega</th>
-                                                <th>Valor Alquiler</th>
-                                            </tr>
-
-                                        </table>
-                                    </div>
-
-                                    <div class="btn-der">
-
-                                        <button id="adicional" name="adicional" type="button" class="btn-sm" onclick="appendText()">Mas+ </button>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <input class="submit" type="submit" value="Guardar">
-                                    </div>
-                                </div>	
-                            </form:form>
-
-                        </div>
+                            </div>
                     </div>
-                </div>
             </div>
+         <div class="col-md-8 col-sm-12 col-xs-12">
+		
+        
+				
         </div>
-        <div class="col-md-8 col-sm-12 col-xs-12">
-
-
-
-        </div>
-
-
-
-
-        <%@include file="../templatefoot.jsp"%>
+        
+                    
+        
+        
+         <%@include file="../templatefoot.jsp"%>
     </body>
 
 </html>
 <script>
-
-    $("#alqval").val($("#selectPc").val());
+     
+      $("#alqval").val($("#selectPc").val()); 
     $("#selectPN").change(function () {
         $("#selectPid")[0].selectedIndex = $("#selectPN")[0].selectedIndex;
-
+        
         $("#selectPc")[0].selectedIndex = $("#selectPN")[0].selectedIndex;
-
+            
         //var dt = new Date( $("#selectPc").val());
-        $("#alqval").val($("#selectPc").val());
-
+        $("#alqval").val($("#selectPc").val()); 
+       
 
     });
     $("#selectSON").change(function () {
@@ -155,16 +133,9 @@
 
 
     $(function () {
-       
+        $("#datepickerD").datepicker();
+        $("#datepickerH").datepicker();
+        $("#datepickerE").datepicker();
 
     });
-
-    var posicion = 0;
-    function appendText() {
-        var form1 = document.createElement("tr");
-        form1.innerHTML = '<td><input type="text" class="form - control" id="idalq" name="Alquiler[' + posicion + '].aut_placa"></td>' + '<td><input type="text" class="form - control" id="modelo" name="Auto[' + posicion + '].aut_modelo"></td>' + '<td><input type="text" class="form - control" id="color" name="Auto[' + posicion + '].aut_color"></td>';
-        posicion++;
-        $("#tablita").append(form1);
-    }
 </script>  
-

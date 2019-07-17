@@ -119,8 +119,11 @@ public class AlquilerDAO {
             aumentador = aumentador.concat(cadena.getPelNombre())+"\n";
         }
         System.out.println(aumentador);
-
+        
+        if(aumentador!="")
         return "Sus peliculas alquiladas son:\n"+aumentador;
+        else
+            return "Usted no tiene ninguna pelicula alquilada";
     }
         public static List<Pelicula> getReporteAlquiler(String valor){
       List<Pelicula> list=null;

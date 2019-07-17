@@ -92,4 +92,18 @@ public class SocioDAO {
         data[5]="CORREO";
         return data;
     }
+     public String guardarSocio(Socio ob)
+    {
+        try{
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        Transaction tx=session.beginTransaction();
+        session.saveOrUpdate(ob);
+        tx.commit();
+        session.close();
+        
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        return "Hecho";
+    }
 }
