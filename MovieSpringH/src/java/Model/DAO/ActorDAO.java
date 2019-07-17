@@ -97,4 +97,25 @@ public class ActorDAO {
         data[2]="SEXO";
         return data;
     }
+     public static List<Actor> getReporteActor(String valor)
+    {
+        List<Actor> list=null;
+        try{
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        String hql="from Actor actor where actor.actNombre='"+valor+"'";
+        Query query =session.createQuery(hql);
+        list = query.list();
+          System.out.println("INICIO");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(" "+list.get(i).getActNombre()+" Sexo: "+list.get(i).getSexo().getSexId()+" "+list.get(i).getSexo().getSexNombre());
+            }
+             System.out.println("********************************************");
+        session.close();
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        return list;   
+    }
+
+     
 }

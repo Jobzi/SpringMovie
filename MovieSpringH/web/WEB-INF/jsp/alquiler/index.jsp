@@ -35,7 +35,7 @@
 		
 			<div class="col-md-8 col-sm-12 col-xs-12">
 				<div class="topbar-filter">
-					<p>Found <span>${alquiler.size()}</span> in total</p>
+					<p>Alquiler <span>${alquiler.size()}</span>encontrado</p>
 					
                                 </div>
 				
@@ -58,23 +58,18 @@
 			</div>
                         <div class="col-md-3 col-xs-12 col-sm-12">
 				<div class="sidebar">
-						<div class="searh-form">
-						<h4 class="sb-title">Search Alquiler</h4>
-						<form class="form-style-1 celebrity-form" action="#">
+						<div class="searh-form">						
 							<div class="row">
 								<div class="col-md-12 form-it">
-									<label>Celebrity name</label>
-									<input type="text" placeholder="Enter keywords">
+									<h4 class="sb-title">Buscar pos cedula</h4>
+									<a href="/MovieSpringH/alquiler/reportealquiler.htm" class="btn btn-success">Buscar</a>
 								</div>
-								
-								<div class="col-md-12 ">
-									<input class="submit" type="submit" value="submit">
-								</div>
+
 							</div>
-						</form>
+						
 					</div>
                                                 <div class="searh-form">
-                                                        <h4 class="sb-title">Download Pdf</h4>
+                                                        <h4 class="sb-title">Descargar Pdf</h4>
                                                             <div class="col-md-12 ">
                                                                 <a href="/MovieSpringH/file/download.htm?tag=alquiler">
                                                                     <input class="redbtn" type="button" value="download pdf">

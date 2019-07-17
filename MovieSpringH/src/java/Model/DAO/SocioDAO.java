@@ -92,6 +92,26 @@ public class SocioDAO {
         data[5]="CORREO";
         return data;
     }
+     public static List<Socio> getReporteNombre(String valor)
+    {
+        List<Socio> list=null;
+        try{
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        String hql="from Socio socio where socio.socCedula='"+valor+"'";
+        Query query =session.createQuery(hql);
+        list = query.list();
+          System.out.println("********************************************");
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(" "+list.get(i).getSocNombre());
+            }
+             System.out.println("********************************************");
+        session.close();
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        return list;   
+    }
+
      public String guardarSocio(Socio ob)
     {
         try{

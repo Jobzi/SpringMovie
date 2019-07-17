@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -117,6 +118,20 @@ public class ActorController {
         ActorDAO.Delete(id);
         return new ModelAndView("redirect:/actor/index.htm");
     }
-     
+    
+@RequestMapping(value = "/actor/reporteactor.htm",method=RequestMethod.GET)
+    public String reportesocio(Model m){
+        
+           List<Actor> list = ActorDAO.getlist();
+           m.addAttribute("actor",list);
+        return "/actor/reporteactor"; 
+    }
+    
+    @RequestMapping(value = "/actor/reporteactor.htm",method=RequestMethod.POST)
+    public String reportesocio(Model m,@RequestParam("valor") String valor){
+           List<Actor> list = ActorDAO.getReporteActor(valor);
+           m.addAttribute("actor",list);
+        return "/actor/index"; 
+    }
     
 }

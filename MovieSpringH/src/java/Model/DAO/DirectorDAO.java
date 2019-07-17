@@ -88,4 +88,20 @@ public class DirectorDAO {
 
         return data;
     }
+    public static List<Director> getReporteDirector(String valor)
+    {
+        List<Director> list=null;
+        try{
+        Session session =HibernateUtil.getSessionFactory().openSession();
+        String hql="from Director director where director.dirNombre='"+valor+"'";
+        Query query =session.createQuery(hql);
+        list = query.list();
+         
+        session.close();
+        }catch(Exception E){
+            E.printStackTrace();
+        }
+        return list;   
+    }
+
 }
